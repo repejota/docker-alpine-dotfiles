@@ -7,11 +7,26 @@ RUN addgroup -g 1000 user \
 RUN apk --no-cache add \
 	ca-certificates \
 	git \
-	vim
+	vim \
+  bash
 
 USER user
-ENV HOME /home/user
+WORKDIR /home/user
 
-ENV LANG C.UTF-8
+RUN git clone https://github.com/repejota/dotfiles.git && \
+  cd dotfiles && git submodule update --init --recursive && cd .. &&\
+  ln -s ./dotfiles/.gitconfig && \
+  ln -s ./dotfiles/.inputrc && \
+  ln -s ./dotfiles/.profile && \
+  ln -s ./dotfiles/.bin && \
+  ln -s ./dotfiles/.bash && \
+  ln -s ./dotfiles/.bashrc && \
+  ln -s ./dotfiles/.bash_profile && \
+  ln -s ./dotfiles/.config
+
+RUN git clone https://github.com/repejota/dotvim.git && \
+  ln -s ./dotvim/.vimrc && \
+  sh ./dotvim/install.sh
+
 
 CMD ["bash", "-l"]
