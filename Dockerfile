@@ -14,7 +14,7 @@ USER user
 WORKDIR /home/user
 
 RUN git clone https://github.com/repejota/dotfiles.git && \
-  cd dotfiles && git submodule update --init --recursive && cd .. &&\
+  cd dotfiles && git submodule update --init --recursive && cd .. && \
   ln -s ./dotfiles/.gitconfig && \
   ln -s ./dotfiles/.inputrc && \
   ln -s ./dotfiles/.profile && \
@@ -27,6 +27,5 @@ RUN git clone https://github.com/repejota/dotfiles.git && \
 RUN git clone https://github.com/repejota/dotvim.git && \
   ln -s ./dotvim/.vimrc && \
   sh ./dotvim/install.sh
-
 
 CMD ["bash", "-l"]
