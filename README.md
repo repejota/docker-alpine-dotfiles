@@ -10,7 +10,7 @@ container user.
 
 Download size of this image is only:
 
-[![](https://images.microbadger.com/badges/image/repejota/docker-alpine-dotfiles.svg)](http://microbadger.com/images/repejota/docker-alpine-mutt "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/repejota/docker-alpine-dotfiles.svg)](http://microbadger.com/images/repejota/docker-alpine-dotfiles "Get your own image badge on microbadger.com")
 
 # Quick Start
 
