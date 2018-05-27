@@ -8,7 +8,7 @@ RUN apk --no-cache add \
 	ca-certificates \
 	git \
 	vim \
-  bash
+    bash
 
 USER user
 WORKDIR /home/user
@@ -22,9 +22,8 @@ RUN git clone https://github.com/repejota/dotfiles.git && \
   ln -s ./dotfiles/.bash && \
   ln -s ./dotfiles/.bashrc && \
   ln -s ./dotfiles/.bash_profile && \
-  ln -s ./dotfiles/.config
-
-RUN git clone https://github.com/repejota/dotvim.git && \
+  ln -s ./dotfiles/.config && \
+  git clone https://github.com/repejota/dotvim.git && \
   ln -s ./dotvim/.vimrc && \
   sh ./dotvim/install.sh
 

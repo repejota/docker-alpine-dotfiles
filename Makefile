@@ -10,7 +10,7 @@ run:	## Run an instance of the container
 
 .PHONY: docker-build
 docker-build:	## Builds container and tag resulting image
-	docker build --force-rm --no-cache --tag ${DOCKER_IMAGE} .
+	docker build --rm --force-rm .
 	docker tag ${DOCKER_IMAGE} ${DOCKER_IMAGE}:$(VERSION)
 
 .PHONY: docker-publish
