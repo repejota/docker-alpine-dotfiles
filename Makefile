@@ -6,7 +6,6 @@ run: docker-build
 run:	## Run an instance of the container
 	docker run -ti \
 		--rm \
-		--force-rm \
 		--name docker-alpine-dotfiles \
 		${DOCKER_IMAGE}
 
